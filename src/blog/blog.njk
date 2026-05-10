@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Blog
+description: Read latest articles about dental health, treatments, and tips from Smile Dental Clinic.
+permalink: /blog/
+---
+
+<section style="padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 3); background: var(--bg-color);">
+  <div class="container">
+    <h1 style="text-align: center; color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) * 6);">Dental Health Blog</h1>
+    
+    {% if collections.blog.length > 0 %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: calc(var(--spacing-unit) * 4);">
+        {% for post in collections.blog %}
+          <article style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.08)'">
+            <div style="padding: calc(var(--spacing-unit) * 3);">
+              <span style="display: inline-block; background: var(--accent-color); color: white; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1.5); border-radius: 4px; font-size: 12px; font-weight: 600; margin-bottom: calc(var(--spacing-unit) * 2);">{{ post.data.date | dateFormat }}</span>
+              <h3 style="color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) * 1.5);">{{ post.data.title }}</h3>
+              <p style="color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 2); font-size: 14px;">{{ post.data.description }}</p>
+              <a href="{{ post.url }}" style="color: var(--accent-color); font-weight: 600; font-size: 14px;">Read More →</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p style="text-align: center; color: var(--text-light); font-size: 16px;">No blog posts yet. Check back soon!</p>
+    {% endif %}
+  </div>
+</section>

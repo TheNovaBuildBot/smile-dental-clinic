@@ -1,0 +1,47 @@
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>About Us</h3>
+      <p>{{ site.specialty }}</p>
+      <p style="margin-top: calc(var(--spacing-unit) * 2); opacity: 0.8;">{{ site.qualifications }}</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Our Services</h3>
+      <ul>
+        {% for service in services %}
+        <li><a href="#services">{{ service.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p style="margin-bottom: calc(var(--spacing-unit) * 2);">
+        <strong>Phone:</strong><br />
+        <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
+      </p>
+      <p style="margin-bottom: calc(var(--spacing-unit) * 2);">
+        <strong>Email:</strong><br />
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
+      <p>
+        <strong>Location:</strong><br />
+        {{ site.address }}
+      </p>
+    </div>
+
+    {% if site.linkedin %}
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <ul>
+        <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 {{ site.name }}. All rights reserved. Caring for your smile since 2026.</p>
+  </div>
+</footer>

@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+
+<article style="max-width: 800px; margin: 0 auto; padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);">
+  <header style="margin-bottom: calc(var(--spacing-unit) * 4); text-align: center;">
+    <span style="display: inline-block; background: var(--accent-color); color: white; padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 2); border-radius: 4px; font-size: 12px; font-weight: 600; margin-bottom: calc(var(--spacing-unit) * 2);">{{ date | dateFormat }}</span>
+    <h1 style="color: var(--primary-color);">{{ title }}</h1>
+    {% if readTime %}<p style="color: var(--text-light); margin-top: calc(var(--spacing-unit) * 2);">{{ readTime }}</p>{% endif %}
+  </header>
+
+  <div style="background: white; padding: calc(var(--spacing-unit) * 4); border-radius: 12px; line-height: 1.8;">
+    {{ content | safe }}
+  </div>
+
+  <footer style="margin-top: calc(var(--spacing-unit) * 6); padding-top: calc(var(--spacing-unit) * 4); border-top: 1px solid var(--border-color); text-align: center;">
+    <p style="color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 2);">Have questions? <a href="/#contact">Contact us today!</a></p>
+    <a href="/blog/" class="btn btn-primary">← Back to Blog</a>
+  </footer>
+</article>

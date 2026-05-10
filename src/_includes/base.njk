@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Smile Dental Clinic offers comprehensive dental care including cleanings, root canals, implants, orthodontics, and general dentistry in Ahmedabad.{% endif %}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if title %}{{ title }} | Smile Dental Clinic{% else %}Smile Dental Clinic - Your Trusted Dental Care Partner{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Professional dental care in Ahmedabad. Expert treatments from general dentistry to implants and orthodontics.{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/og-image.jpg" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% if title %}{{ title }} | Smile Dental Clinic{% else %}Smile Dental Clinic - Your Trusted Dental Care Partner{% endif %}" />
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Professional dental care in Ahmedabad. Expert treatments from general dentistry to implants and orthodontics.{% endif %}" />
+  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.jpg" />
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "{{ site.name }}",
+    "description": "{{ site.specialty }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.address }}",
+      "addressLocality": "{{ site.city }}",
+      "addressRegion": "Gujarat",
+      "postalCode": "380006",
+      "addressCountry": "IN"
+    },
+    "areaServed": "{{ site.city }}",
+    "medicalSpecialty": ["Dentistry"]
+  }
+  </script>
+
+  <title>{% if title %}{{ title }} | Smile Dental Clinic{% else %}Smile Dental Clinic - Your Trusted Dental Care Partner{% endif %}</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0a5c6f;
+      --accent-color: #00a8cc;
+      --text-color: #1a1a1a;
+      --text-light: #666666;
+      --bg-color: #f8f9fa;
+      --border-color: #e0e0e0;
+      --success-color: #10b981;
+      --error-color: #ef4444;
+      --spacing-unit: 8px;
+      --section-padding: 80px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #fafbfc;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+
+    p {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      color: var(--text-light);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: calc(var(--spacing-unit) * 1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: calc(var(--spacing-unit) * 4);
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: calc(var(--spacing-unit) * 0.5);
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #0a4a5a 100%);
+      color: white;
+      padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 3);
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 42px;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      margin-bottom: calc(var(--spacing-unit) * 3);
+      opacity: 0.95;
+    }
+
+    .hero-tagline {
+      font-size: 16px;
+      margin-bottom: calc(var(--spacing-unit) * 4);
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: calc(var(--spacing-unit) * 2);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0088aa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 168, 204, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background-color: transparent;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Section Layout */
+    section {
+      padding: var(--section-padding) calc(var(--spacing-unit) * 3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 6);
+    }
+
+    .section-title h2 {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      color: var(--primary-color);
+    }
+
+    .section-title p {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--spacing-unit) * 6);
+      align-items: center;
+    }
+
+    .about-text h2 {
+      color: var(--primary-color);
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .about-text p {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .about-highlights {
+      margin-top: calc(var(--spacing-unit) * 3);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .highlight {
+      padding: calc(var(--spacing-unit) * 2);
+      background: var(--bg-color);
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .highlight h3 {
+      color: var(--primary-color);
+      font-size: 16px;
+      margin-bottom: calc(var(--spacing-unit) * 1);
+    }
+
+    /* Services Section */
+    .services {
+      background: var(--bg-color);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: calc(var(--spacing-unit) * 4);
+    }
+
+    .service-card {
+      background: white;
+      padding: calc(var(--spacing-unit) * 4);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--accent-color);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-card h3 {
+      color: var(--primary-color);
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: white;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: calc(var(--spacing-unit) * 4);
+    }
+
+    .testimonial-card {
+      background: var(--bg-color);
+      padding: calc(var(--spacing-unit) * 4);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .testimonial-card p {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 14px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--bg-color);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--spacing-unit) * 6);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      background: white;
+      padding: calc(var(--spacing-unit) * 4);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: calc(var(--spacing-unit) * 3);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: calc(var(--spacing-unit) * 1);
+      font-weight: 600;
+      color: var(--text-color);
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: calc(var(--spacing-unit) * 2);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-message {
+      padding: calc(var(--spacing-unit) * 2);
+      border-radius: 6px;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      display: none;
+    }
+
+    .form-message.success {
+      background-color: #d1fae5;
+      color: #065f46;
+      display: block;
+    }
+
+    .form-message.error {
+      background-color: #fee2e2;
+      color: #991b1b;
+      display: block;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing-unit) * 4);
+    }
+
+    .info-block {
+      padding: calc(var(--spacing-unit) * 3);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .info-block h3 {
+      color: var(--primary-color);
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      font-size: 16px;
+    }
+
+    .info-block p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .info-block a {
+      display: inline-block;
+      margin-top: calc(var(--spacing-unit) * 1);
+    }
+
+    /* FAQ Section */
+    .faq {
+      background: white;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: calc(var(--spacing-unit) * 3);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: calc(var(--spacing-unit) * 3);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: calc(var(--spacing-unit) * 1);
+    }
+
+    .faq-question::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: calc(var(--spacing-unit) * 4);
+      margin-bottom: calc(var(--spacing-unit) * 4);
+    }
+
+    .footer-section h3 {
+      color: white;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      font-size: 16px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.2s ease;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: calc(var(--spacing-unit) * 4);
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Profile Photo */
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      section {
+        padding: calc(var(--section-padding) / 2) calc(var(--spacing-unit) * 2);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 2);
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 4);
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 4);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --section-padding: 40px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      nav {
+        padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% include "header.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', function() {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const message = document.querySelector('.form-message');
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/hello@smiledental.com', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (response.ok) {
+            message.textContent = 'Thank you! Your message has been sent successfully.';
+            message.className = 'form-message success';
+            contactForm.reset();
+            setTimeout(() => {
+              message.style.display = 'none';
+            }, 5000);
+          } else {
+            message.textContent = 'There was an error sending your message. Please try again.';
+            message.className = 'form-message error';
+          }
+        } catch (error) {
+          message.textContent = 'There was an error. Please try again or contact us directly.';
+          message.className = 'form-message error';
+        }
+      });
+    }
+
+    {% if site.ga_id %}
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_id }}');
+    {% endif %}
+  </script>
+</body>
+</html>

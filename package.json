@@ -1,0 +1,17 @@
+{
+  "name": "smile-dental-clinic",
+  "version": "1.0.0",
+  "description": "Smile Dental Clinic website",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": ["dental", "clinic"],
+  "author": "Smile Dental Clinic",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "wrangler": "^4.0.0"
+  }
+}
