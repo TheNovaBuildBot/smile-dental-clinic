@@ -28,5 +28,11 @@
     "description": "Straighten your smile with modern braces and clear aligner options for all ages.",
     "icon": "assets/orthodontics.svg",
     "alt": "Orthodontics icon"
+  },
+  {
+    "name": "Cosmetic Care",
+    "description": "Professional teeth whitening, porcelain veneers, and subtle smile restorations — designed to look like your natural best, not an obvious cosmetic fix.",
+    "icon": "assets/cosmetic-care.svg",
+    "alt": "Cosmetic dentistry icon"
   }
 ]
