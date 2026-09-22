@@ -1,5 +1,7 @@
 # Smile Dental Clinic
 
-> Smile Dental Clinic in Ellisbridge, Ahmedabad. Calm, modern dental care — cleanings, root canals, implants, orthodontics, and general dentistry.
+> Professional dental clinic in Ahmedabad offering comprehensive dental care including cleanings, root canals, implants, and orthodontics. Located in Ellisbridge with experienced dental professionals and modern equipment.
 
-- [Home](https://smile-dental-clinic.pages.dev/)
+## Pages
+
+- [Home](https://smile-dental-clinic.pages.dev/): Smile Dental Clinic - comprehensive dental services in Ahmedabad

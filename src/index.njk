@@ -1,296 +1,199 @@
 ---
 layout: base.njk
-title: Modern Dentistry in Ahmedabad
-description: Smile Dental Clinic in Ellisbridge, Ahmedabad. Calm, modern dental care — cleanings, root canals, implants, orthodontics, and general dentistry.
+title: Professional Dental Care in Ahmedabad
+description: Comprehensive dental services including cleanings, root canals, implants, and orthodontics. Book your appointment today.
 ---
 
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container hero-inner">
-    <span class="eyebrow">Modern Dentistry · Ahmedabad</span>
-    <h1>A calmer kind<br/>of dental visit.</h1>
-    <p>Thoughtful, modern care from a team that takes the time to listen. From routine cleanings to advanced restorations, we build long-term smiles — comfortably.</p>
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn btn-primary">Book a visit <span class="arrow">→</span></a>
-      <a href="#services" class="btn btn-ghost">Our services</a>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Welcome to</div>
+    <h1>Smile Dental Clinic</h1>
+    <p>From routine cleanings to advanced restorations, we provide comprehensive dental care in a calm, welcoming environment.</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn btn-primary">Book appointment <span class="btn-arrow">→</span></a>
+      <a href="#services" class="btn btn-ghost">View services <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<section id="welcome" class="welcome">
-  <div class="container welcome-grid">
-    <div class="welcome-image reveal">
-      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80&auto=format&fit=crop"
-           alt="Modern dental treatment room at Smile Dental Clinic" loading="lazy" />
+<!-- About -->
+<section id="about">
+  <div class="about">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80&auto=format&fit=crop" alt="Professional dental practice environment">
     </div>
-
-    <div class="reveal">
-      <span class="eyebrow">Welcome</span>
-      <h2>Dentistry, designed around you.</h2>
-      <p>At Smile Dental, every visit begins with a conversation — not a clipboard. We take the time to understand what matters to you, then plan treatment around your comfort, your schedule, and your goals.</p>
-      <p>Our clinic in Ellisbridge brings together gentle clinicians, modern equipment, and unhurried appointments — so dentistry feels less like an obligation and more like quiet, careful work on something that matters.</p>
-
-      <div class="welcome-meta">
-        <div class="welcome-meta-item">
-          <div class="label">Patients seen</div>
-          <div class="value">2,400+</div>
-        </div>
-        <div class="welcome-meta-item">
-          <div class="label">Years caring</div>
-          <div class="value">Since 2018</div>
-        </div>
-        <div class="welcome-meta-item">
-          <div class="label">Treatments</div>
-          <div class="value">Full-service</div>
-        </div>
-        <div class="welcome-meta-item">
-          <div class="label">Location</div>
-          <div class="value">Ellisbridge</div>
-        </div>
+    <div class="about-content">
+      <div class="section-header" style="text-align: left; margin: 0 0 2rem 0; max-width: 100%;">
+        <div class="section-eyebrow">Who We Are</div>
+        <h2>Your oral health is our priority</h2>
       </div>
+      <p>At Smile Dental Clinic, we believe that quality dental care should be accessible, comfortable, and personalized. Our team of licensed professionals brings years of experience and a commitment to staying current with the latest techniques and technologies.</p>
+      <p>We create a welcoming environment where you feel heard and cared for. Whether you're visiting for a routine cleaning or a complex procedure, we take the time to explain your options and address any concerns.</p>
+      <ul class="about-list">
+        <li>Licensed, experienced dental professionals</li>
+        <li>Modern equipment and techniques</li>
+        <li>Patient-centered care approach</li>
+        <li>Flexible scheduling and emergency services</li>
+        <li>Transparent pricing and insurance coordination</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="services" class="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Services</span>
-      <h2>Comprehensive care, under one roof.</h2>
-      <p>From your first cleaning to advanced restorations, every treatment is delivered with the same calm attention to detail.</p>
+<!-- Services -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-eyebrow">Our Services</div>
+    <h2>Comprehensive dental care under one roof</h2>
+    <p class="section-lead">From preventive cleanings to advanced restorations, we offer a full range of dental treatments tailored to your needs.</p>
+  </div>
+  
+  <div class="services-grid">
+    {% for service in services %}
+    <div class="service-card">
+      <div class="service-card-top">{{ service.icon }}</div>
+      <div class="service-card-content">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <a href="#contact">Schedule a visit →</a>
+      </div>
     </div>
-
-    <div class="services-grid">
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80&auto=format&fit=crop"
-               alt="Dental checkup chair" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>General Dentistry</h3>
-          <p>Routine examinations, preventative care, and the small but vital work that keeps your smile healthy for the long run.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1559125148-869baf508c95?w=800&q=80&auto=format&fit=crop"
-               alt="Professional dental cleaning" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>Cleanings &amp; Hygiene</h3>
-          <p>Gentle scaling, polishing, and personalised home-care guidance — so daily brushing actually keeps doing its job.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop"
-               alt="Endodontic root canal treatment" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>Root Canals</h3>
-          <p>Modern endodontic treatment that saves your natural tooth — performed with proper anaesthesia and a quiet, careful pace.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&auto=format&fit=crop"
-               alt="Dental implant treatment planning" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>Implants</h3>
-          <p>A long-term solution for missing teeth — planned with imaging, placed with precision, and built to last decades.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1559125148-869baf508c95?w=800&q=80&auto=format&fit=crop"
-               alt="Orthodontics consultation" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>Orthodontics</h3>
-          <p>Traditional braces and modern clear aligners — for adults and teens who want a straighter smile without the awkwardness.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop"
-               alt="Cosmetic dentistry consultation" loading="lazy" />
-        </div>
-        <div class="service-body">
-          <h3>Cosmetic Care</h3>
-          <p>Whitening, veneers, and subtle restorations designed to look like your best self — not someone else's.</p>
-          <span class="more">Learn more →</span>
-        </div>
-      </article>
-    </div>
+    {% endfor %}
   </div>
 </section>
 
-<section id="reviews" class="reviews">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Patient stories</span>
-      <h2>People we've cared for.</h2>
-      <p>A few words from patients who've made Smile Dental their long-term dental home.</p>
-    </div>
-
-    <div class="reviews-grid">
-      <article class="review reveal">
-        <p>The team takes the time to actually explain what they're doing — and why. My root canal was completely painless, which I genuinely didn't expect.</p>
-        <div class="review-author">
-          <div class="dot">P</div>
-          <div class="who">Priya S.<small>Patient, Ahmedabad</small></div>
-        </div>
-      </article>
-
-      <article class="review reveal">
-        <p>I've been visiting for three years now. The clinic feels calm, the staff remembers you, and the work is consistently excellent. Quietly the best dental experience I've had.</p>
-        <div class="review-author">
-          <div class="dot">R</div>
-          <div class="who">Rajesh M.<small>Patient, Ahmedabad</small></div>
-        </div>
-      </article>
-
-      <article class="review reveal">
-        <p>I came in for braces and ended up bringing both my kids. The orthodontic care is excellent and they have the patience of saints with younger patients.</p>
-        <div class="review-author">
-          <div class="dot">N</div>
-          <div class="who">Neha P.<small>Patient, Ahmedabad</small></div>
-        </div>
-      </article>
-    </div>
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="section-header">
+    <div class="section-eyebrow">What Patients Say</div>
+    <h2>Trusted by our community</h2>
+    <p class="section-lead">Real feedback from patients who've experienced our care.</p>
   </div>
-</section>
-
-<section id="faq" class="faq">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Questions</span>
-      <h2>Things patients often ask.</h2>
-      <p>Don't see your question? Call us — we're happy to talk things through before you book.</p>
+  
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">"The entire team made me feel comfortable. They explained every step and truly listen to your concerns."</p>
+      <div class="testimonial-author">
+        <div class="author-initial">A</div>
+        <div class="author-info">
+          <h4>Anjali M.</h4>
+          <p>Regular patient</p>
+        </div>
+      </div>
     </div>
-
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <div class="faq-q">How often should I have a dental check-up? <span class="icon">+</span></div>
-        <div class="faq-a"><p>Twice a year is the right cadence for most people. If you have specific concerns — orthodontic treatment, gum sensitivity, recent dental work — we may suggest a slightly tighter rhythm. We'll build a plan that fits you.</p></div>
+    
+    <div class="testimonial">
+      <p class="testimonial-text">"Professional, punctual, and painless. The best dental experience I've had. Highly recommend!"</p>
+      <div class="testimonial-author">
+        <div class="author-initial">R</div>
+        <div class="author-info">
+          <h4>Rajesh P.</h4>
+          <p>Regular patient</p>
+        </div>
       </div>
-
-      <div class="faq-item reveal">
-        <div class="faq-q">Are root canals actually painful? <span class="icon">+</span></div>
-        <div class="faq-a"><p>Not anymore. Modern anaesthesia and gentler technique mean most patients describe the procedure as no worse than a routine filling. The point of a root canal is to remove pain, not cause it.</p></div>
-      </div>
-
-      <div class="faq-item reveal">
-        <div class="faq-q">How long do dental implants take? <span class="icon">+</span></div>
-        <div class="faq-a"><p>The implant procedure itself is one appointment. Full healing (osseointegration with the bone) takes three to six months, after which we fit the permanent crown. We'll walk you through the full timeline at your consultation.</p></div>
-      </div>
-
-      <div class="faq-item reveal">
-        <div class="faq-q">Do you accept insurance? <span class="icon">+</span></div>
-        <div class="faq-a"><p>We work with most major insurance providers. Call us at {{ site.phone_display }} or send a quick email and we'll check your coverage before you book.</p></div>
-      </div>
-
-      <div class="faq-item reveal">
-        <div class="faq-q">What if I have a dental emergency? <span class="icon">+</span></div>
-        <div class="faq-a"><p>Call us at {{ site.phone_display }} as soon as you can. We keep emergency slots open most days and will do our best to see you the same day.</p></div>
+    </div>
+    
+    <div class="testimonial">
+      <p class="testimonial-text">"They have modern equipment and a very calm approach. I was nervous, but they made me feel at ease."</p>
+      <div class="testimonial-author">
+        <div class="author-initial">P</div>
+        <div class="author-info">
+          <h4>Priya S.</h4>
+          <p>Regular patient</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <span class="eyebrow">Get in touch</span>
-      <h2>Book your visit.</h2>
-      <p>Tell us a little about what brings you in, and we'll get back within one business day with a few appointment options.</p>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div>
-          <div class="label">Call</div>
-          <div class="value"><a href="tel:{{ site.phone }}">{{ site.phone_display }}</a></div>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div>
-          <div class="label">Email</div>
-          <div class="value"><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div>
-          <div class="label">Visit</div>
-          <div class="value">{{ site.address }}</div>
-        </div>
-      </div>
-    </div>
-
-    <form id="contact-form" class="contact-form reveal">
-      <h3 class="display">Send us a note</h3>
-
-      <div class="form-row">
+<!-- Contact -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-eyebrow">Get in Touch</div>
+    <h2>Schedule your appointment</h2>
+    <p class="section-lead">Reach out to us to book a visit or ask any questions about our services.</p>
+  </div>
+  
+  <div class="contact-container">
+    <div>
+      <form>
+        <input type="hidden" name="_subject" value="New appointment request from website">
+        
         <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" required />
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
         </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input id="phone" type="tel" name="phone" />
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <div class="form-message"></div>
+      </form>
+    </div>
+    
+    <div class="contact-info">
+      <div>
+        <div class="info-block">
+          <h3>Hours</h3>
+          <div class="info-item">
+            <strong>Monday – Friday</strong><br>
+            9:00 AM – 6:00 PM
+          </div>
+          <div class="info-item">
+            <strong>Saturday</strong><br>
+            10:00 AM – 4:00 PM
+          </div>
+          <div class="info-item">
+            <strong>Sunday</strong><br>
+            Closed
+          </div>
+        </div>
+        
+        <div class="info-block">
+          <h3>Contact Info</h3>
+          <div class="info-item">
+            <strong>Phone</strong><br>
+            <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
+          </div>
+          <div class="info-item">
+            <strong>Email</strong><br>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </div>
+          <div class="info-item">
+            <strong>Address</strong><br>
+            {{ site.address }}<br>
+            {{ site.address_short }}
+          </div>
         </div>
       </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.512345678!2d72.52!3d23.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2b5a00000!2sEllisbridge!5e0!3m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="form-group">
-        <label for="service">Interested in</label>
-        <select id="service" name="service">
-          <option value="">Tell us what you're looking for</option>
-          <option>General Dentistry</option>
-          <option>Cleanings &amp; Hygiene</option>
-          <option>Root Canal Treatment</option>
-          <option>Dental Implants</option>
-          <option>Orthodontics</option>
-          <option>Cosmetic Care</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="A little context about what brings you in..."></textarea>
-      </div>
-
-      <input type="hidden" name="_subject" value="New appointment request — Smile Dental" />
-      <input type="hidden" name="_captcha" value="false" />
-
-      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-        Send message <span class="arrow">→</span>
-      </button>
-      <div class="form-message"></div>
-    </form>
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to start your journey to better oral health?</h2>
+  <p>Get in touch with our team today to schedule your appointment or learn more about our services.</p>
+  <div class="cta-group" style="justify-content: center;">
+    <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary); border-color: white;">Book Now <span class="btn-arrow">→</span></a>
+    <a href="tel:{{ site.phone }}" class="btn btn-ghost">Call Us <span class="btn-arrow">→</span></a>
   </div>
 </section>

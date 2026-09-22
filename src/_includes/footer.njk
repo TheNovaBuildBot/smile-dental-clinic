@@ -1,31 +1,41 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">Smile Dental</div>
-        <p>Calm, modern dentistry — built around your comfort, your time, and your long-term oral health.</p>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-section">
+      <h3>{{ site.name }}</h3>
+      <p style="font-size: 14px; color: rgba(255, 255, 255, 0.8); margin: 0;">{{ site.specialty }}</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Services</h3>
+      <ul>
+        {% for service in services %}
+        <li><a href="#services">{{ service.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <div class="info-item">
+        <strong>Phone</strong><br>
+        <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
       </div>
-      <div class="footer-col">
-        <h4>Visit</h4>
-        <ul>
-          <li>{{ site.address }}</li>
-          <li><a href="tel:{{ site.phone }}">{{ site.phone_display }}</a></li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Practice</h4>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#reviews">Patient Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Book a visit</a></li>
-        </ul>
+      <div class="info-item">
+        <strong>Email</strong><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Smile Dental Clinic. All rights reserved.</span>
-      <span>Photography via Unsplash.</span>
+    
+    <div class="footer-section">
+      <h3>Location</h3>
+      <p style="font-size: 14px; color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.6;">
+        {{ site.address }}<br>
+        {{ site.address_short }}
+      </p>
     </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 {{ site.name }}. All rights reserved. Photography via Unsplash.</p>
   </div>
 </footer>

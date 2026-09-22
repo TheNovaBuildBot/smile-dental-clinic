@@ -1,16 +1,6 @@
 name = "smile-dental-clinic"
 type = "javascript"
-account_id = ""
-workers_dev = true
-route = ""
-zone_id = ""
-
-[build]
-command = "npm run build"
-cwd = "./"
-
-[env.production]
-vars = { ENVIRONMENT = "production" }
+main = "functions/index.js"
 
 [assets]
 directory = "./_site"
