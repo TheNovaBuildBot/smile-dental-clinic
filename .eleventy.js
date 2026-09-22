@@ -1,36 +1,34 @@
-export default function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   // Passthrough copy
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/llms.txt");
 
-  // Date formatting filter
-  eleventyConfig.addFilter("dateFormat", function (date) {
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(date);
+  // Date format filter
+  eleventyConfig.addFilter("dateFormat", function(date) {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
   });
 
-  // ISO date filter
-  eleventyConfig.addFilter("dateToISO", function (date) {
-    return date.toISOString().split("T")[0];
+  // Date to ISO filter
+  eleventyConfig.addFilter("dateToISO", function(date) {
+    return new Date(date).toISOString().split("T")[0];
   });
 
-  // Blog collection
-  eleventyConfig.addCollection("blog", function (collection) {
+  // Blog posts collection
+  eleventyConfig.addCollection("blog", function(collection) {
     return collection
       .getFilteredByGlob("src/blog/posts/*.md")
-      .sort((a, b) => b.date - a.date);
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
   return {
     dir: {
       input: "src",
-      output: "_site",
+      output: "_site"
     },
-    templateFormats: ["njk", "md"],
-    markdownTemplateEngine: "njk",
+    templateFormats: ["njk", "md", "json"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
   };
-}
+};

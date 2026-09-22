@@ -1,27 +1,38 @@
 [
   {
+    "name": "General Dentistry",
+    "description": "Routine cleanings, examinations, and preventive care to maintain your dental health and catch issues early.",
+    "icon": "assets/general-dentistry.svg",
+    "alt": "General dentistry icon"
+  },
+  {
     "name": "Dental Cleanings",
-    "description": "Professional cleaning and scaling to remove plaque and tartar buildup, keeping your teeth healthy and bright.",
-    "icon": "✓"
+    "description": "Professional cleaning and scaling to remove plaque and tartar, keeping your teeth healthy and bright.",
+    "icon": "assets/cleanings.svg",
+    "alt": "Dental cleanings icon"
   },
   {
     "name": "Root Canals",
-    "description": "Endodontic treatment to save infected or damaged teeth using gentle, modern techniques.",
-    "icon": "✓"
+    "description": "Advanced endodontic treatment to save infected or severely damaged teeth with precision and care.",
+    "icon": "assets/root-canals.svg",
+    "alt": "Root canal treatment icon"
   },
   {
     "name": "Dental Implants",
-    "description": "Permanent tooth replacement solutions that look and function like natural teeth.",
-    "icon": "✓"
+    "description": "Permanent tooth replacement solution with natural-looking results and lasting durability.",
+    "icon": "assets/implants.svg",
+    "alt": "Dental implants icon"
   },
   {
     "name": "Orthodontics",
-    "description": "Teeth straightening and alignment services to improve your smile and bite.",
-    "icon": "✓"
+    "description": "Straighten your smile with modern braces and clear aligner options for all ages.",
+    "icon": "assets/orthodontics.svg",
+    "alt": "Orthodontics icon"
   },
   {
-    "name": "General Dentistry",
-    "description": "Routine exams, fillings, and preventive care to maintain your oral health.",
-    "icon": "✓"
+    "name": "Cosmetic Care",
+    "description": "Professional teeth whitening, porcelain veneers, and subtle smile restorations — designed to look like your natural best, not an obvious cosmetic fix.",
+    "icon": "assets/cosmetic-care.svg",
+    "alt": "Cosmetic dentistry icon"
   }
 ]
